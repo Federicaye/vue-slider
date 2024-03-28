@@ -4,17 +4,15 @@ createApp({
     data() {
         return {
             slides,
-            activeIndexSlide: 0
+            activeIndexSlide: 0,
+            slideOver: false,
+            
         }
+        
     },
     methods: {
-
-        slideGo() {
-            setInterval(this.nextSlide, 3000)
-        },
-        slideStop() {
-            clearInterval(this.slideGo)
-        },
+        slideGo() {setInterval(this.nextSlide, 3000)},
+        slideStop() {clearInterval(this.slideGo)},
         nextSlide() {
             if (this.activeIndexSlide < this.slides.length - 1) {
                 this.activeIndexSlide++;
