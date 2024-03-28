@@ -8,6 +8,13 @@ createApp({
         }
     },
     methods: {
+
+        slideGo() {
+            setInterval(this.nextSlide, 3000)
+        },
+        slideStop() {
+            clearInterval(this.slideGo)
+        },
         nextSlide() {
             if (this.activeIndexSlide < this.slides.length - 1) {
                 this.activeIndexSlide++;
@@ -23,11 +30,14 @@ createApp({
         },
         goToSlide(index) {
             this.activeIndexSlide = index
-        }
+        },
+        /*  stopSlide(){
+             clearInterval()
+         } */
     },
     mounted() {
-        setInterval(this.nextSlide,1000)
-        
+        this.slideGo()
+
     }
 }).mount('#app')
 
